@@ -26,6 +26,12 @@
     'papers.k': 'Paper · SemEval', 'papers.1': 'sprachübergreifendes Fact-Check-Retrieval · 2025', 'papers.2': 'Emotion–Ursache-Paare · 2024 · Erstautor', 'papers.3': 'Emotionserkennung in Code-Mixing · 2024', 'papers.more': 'Alle auf Google Scholar ↗',
     'ask.h': 'Frag mich etwas', 'ask.sub': 'einfaches Retrieval über meine Antworten, direkt im Browser', 'ask.label': 'Deine Frage',
     'teach.k': 'Kurse als Tutor', 'teach.3': 'Compilerbau', 'teach.4': 'Computersimulation', 'teach.5': 'Lineare Algebra &amp; Programmierung',
+    'path.h': 'Mein Weg bisher', 'path.sub': 'Teheran → Bonn',
+    'path.1h': 'Sharif University', 'path.1': 'Studienbeginn Computer Engineering in Teheran, am Fuß des Alborz-Gebirges.',
+    'path.2h': 'Forschung &amp; Lehre', 'path.2': 'Forschung zu Meta-RL, drei SemEval-Paper und fünf Kurse als Tutor.',
+    'path.3h': 'ML in der Praxis', 'path.3': 'Suche, Ranking und Empfehlungen bei Digikala, Yektanet und Snapp.',
+    'path.4h': '5.610 m', 'path.4': 'Gipfel des Damavand erreicht. Wahrscheinlich mein schönster Tag des Jahres.',
+    'path.5h': 'Bonn', 'path.5': 'Start ins Informatik-Masterstudium. Nächstes Kapitel: Deutsch lernen.',
     'mount.k': 'Abseits des Schreibtischs', 'mount.h': 'Höchster Punkt bisher:<br><em>5.610 m</em>',
     'mount.t': 'Der Damavand (2025), der höchste Vulkan Asiens. Beim Wandern, Bergsteigen und Klettern komme ich zur Ruhe, ab und zu kommen Canyoning, Rafting und Snowboarden dazu. Für Touren im Siebengebirge und in der Eifel suche ich noch Mitstreiter.',
     'roll.h': 'Leben in Bildern &amp; Clips', 'hats': 'Hutwechsel',
@@ -107,6 +113,7 @@
   /* ---------- photo strip ---------- */
   const ROLL = [
     ['hiker-ridge', 'A hiker silhouetted against the sun on a grassy ridge', 'The last metres before the top.', 'Die letzten Meter vor dem Gipfel.', '50% 50%'],
+    ['peak-2502', 'Alireza next to a summit sign on a rocky peak', 'Another peak, another sign.', 'Noch ein Gipfel, noch ein Schild.', '50% 35%'],
     ['canyoning', 'Alireza canyoning in a turquoise canyon, orange helmet', 'Canyoning: like hiking, but wetter.', 'Canyoning: wie Wandern, nur nasser.', '50% 40%'],
     ['v:clip4', 'Waterfall running down a rock face', 'Waterfalls are better in motion.', 'Wasserfälle sind bewegt schöner.'],
     ['tent-moon', 'Full moon over the clouds, seen from a tent', 'A night on the mountain, moon above the clouds.', 'Eine Nacht am Berg, der Mond über den Wolken.', '50% 50%'],
@@ -114,16 +121,14 @@
     ['v:clip6', 'Fog rolling over a green meadow', 'Fog rolling in over the meadow.', 'Nebel zieht über die Wiese.'],
     ['damavand-sunset-tall', 'Damavand at sunset', 'Damavand at sunset, from the forest below.', 'Der Damavand im Sonnenuntergang, vom Wald aus.', '30% 70%'],
     ['campfire-dance', 'People dancing around a campfire at night, black and white', 'Dancing around the fire at camp.', 'Tanzen ums Feuer im Camp.', '50% 55%'],
-    ['coffee-bell', 'A desk bell labelled Ring for a coffee', 'Snapp desk essentials, part 1.', 'Snapp-Schreibtisch, Teil 1.', '50% 50%'],
-    ['cat-poster', 'Poster of a cat: you work, I watch and judge', 'Part 2: my desk supervisor.', 'Teil 2: mein Schreibtisch-Aufseher.', '50% 50%'],
-    ['toast', 'A smiling toast plush on a desk', 'Part 3: office mascot. Never burnt.', 'Teil 3: Büro-Maskottchen. Nie verbrannt.', '50% 55%'],
+    ['cat-poster', 'Poster of a cat: you work, I watch and judge', 'My desk supervisor at Snapp.', 'Mein Schreibtisch-Aufseher bei Snapp.', '50% 50%'],
+    ['toast', 'A smiling toast plush on a desk', 'Snapp office mascot. Never burnt.', 'Büro-Maskottchen bei Snapp. Nie verbrannt.', '50% 55%'],
     ['tbilisi-bridge', 'The glass Bridge of Peace in Tbilisi', 'Tbilisi, Bridge of Peace.', 'Tiflis, Friedensbrücke.', '50% 50%'],
     ['v:clip5', 'Looking up into a misty forest', 'Fog days in the forest are the best days.', 'Nebeltage im Wald sind die besten Tage.'],
     ['sea-sunset', 'Sunset over the sea with mountains behind', 'Sea, mountains, sunset. Hard to beat.', 'Meer, Berge, Sonnenuntergang. Schwer zu toppen.', '60% 50%'],
     ['blue-mosque', 'The Blue Mosque in Istanbul lit up at night', 'Istanbul at night.', 'Istanbul bei Nacht.', '50% 40%'],
     ['spongebob', 'A SpongeBob-shaped playground slide', 'Questionable playground design.', 'Fragwürdiges Spielplatzdesign.', '50% 40%'],
-    ['milky-way', 'The Milky Way in a dark sky', 'Up high, the stars come out.', 'Weiter oben kommen die Sterne raus.', '50% 50%'],
-    ['plane-wing', 'Aeroplane wing above the clouds', 'Next stop: Bonn.', 'Nächster Halt: Bonn.', '50% 50%']
+    ['milky-way', 'The Milky Way in a dark sky', 'Up high, the stars come out.', 'Weiter oben kommen die Sterne raus.', '50% 50%']
   ];
   const roll = $('#roll');
   // clips play only while visible (saves data, battery); never autoplay with reduced motion
