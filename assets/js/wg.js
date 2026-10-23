@@ -41,6 +41,7 @@
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
     imgs.forEach((img) => { img.alt = img.dataset[l]; });
     swipe.textContent = swipe.dataset[l];
+    document.querySelectorAll('.back-t').forEach((el) => { el.textContent = el.dataset[l]; });
     document.getElementById('prev').setAttribute('aria-label', l === 'de' ? 'Vorheriges Foto' : 'Previous photo');
     document.getElementById('next').setAttribute('aria-label', l === 'de' ? 'Nächstes Foto' : 'Next photo');
     mark();

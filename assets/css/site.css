@@ -195,7 +195,9 @@ h1, h2 { text-wrap: balance; }
 /* ---------- flatmate profile (/wg/) ---------- */
 .wg { max-width: 560px; margin: 0 auto; padding: 0 14px 28px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
 .wg-top { max-width: 1120px; margin: 0 auto; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-.wg-top .brand { font-size: 16px; }
+.back { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px 0 12px; border: 1.5px solid var(--line-2); border-radius: 999px; background: var(--surface); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; transition: border-color .2s, transform .2s; }
+.back:hover { color: var(--ink); border-color: var(--ink); transform: translateX(-2px); }
+.back span[aria-hidden] { font-size: 18px; line-height: 1; }
 .carousel { position: relative; border-radius: 26px; overflow: hidden; background: var(--line-2); }
 .slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .slides::-webkit-scrollbar { display: none; }
