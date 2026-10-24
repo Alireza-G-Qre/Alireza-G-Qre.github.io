@@ -29,8 +29,8 @@
     'edu.ta': 'Tutor für Reinforcement Learning, Medical Image Analysis, Compilerbau, Computersimulation und Lineare Algebra.',
     'life.k': 'Abseits des Schreibtischs', 'life.h': 'Höchster Punkt bisher: <em>5.610 m</em>',
     'life.t': 'Damavand, 2025. Wandern, Bergsteigen und Klettern, ab und zu Canyoning und Snowboarden. Für Touren im Siebengebirge suche ich noch Mitstreiter.',
-    'ask.h': 'Frag mich etwas', 'ask.sub': 'Antworten aus meinen eigenen Notizen', 'ask.label': 'Deine Frage',
-    'foot.t': 'Gipfel erreicht. Schreib mir!',
+    'ask.h': 'Fragen an mich', 'ask.sub': 'Antworten aus meinen eigenen Notizen', 'ask.label': 'Ihre Frage', 'alt': 'Höhe',
+    'foot.t': 'Gipfel erreicht. Ich freue mich auf Ihre Nachricht!',
     'legal': 'Statisches HTML auf GitHub Pages, keine Cookies, kein Tracking.'
   };
   const EN = {};
@@ -44,9 +44,9 @@
       more: (n) => 'Show all photos & clips (' + n + ' more) ↓', less: 'Show fewer ↑', locale: 'en-GB', local: 'local time'
     },
     de: {
-      placeholder: 'z. B. was hast du bei Digikala gemacht?', idle: 'Frag nach meiner Arbeit, Abschlussarbeit, Papern, Jobwünschen oder Hobbys.',
-      none: 'Noch keine passende Antwort. Versuch eine andere Frage oder schreib mir einfach.',
-      sugg: ['was hast du bei Digikala gemacht?', 'woran arbeitest du gerade?', 'offen für Jobs?', 'Hobbys?'],
+      placeholder: 'z. B. Arbeit bei Digikala', idle: 'Fragen zu meiner Arbeit, Abschlussarbeit, Veröffentlichungen, Jobwünschen oder Hobbys.',
+      none: 'Dazu habe ich noch keine passende Antwort. Schreiben Sie mir gern eine E-Mail.',
+      sugg: ['Arbeit bei Digikala', 'Aktuelles Projekt', 'Offen für Jobs?', 'Hobbys'],
       more: (n) => 'Alle Fotos &amp; Clips zeigen (' + n + ' weitere) ↓', less: 'Weniger zeigen ↑', locale: 'de-DE', local: 'Ortszeit'
     }
   };
@@ -152,16 +152,16 @@
 
   /* ---------- ask me (keyword retrieval over a small Q&A set) ---------- */
   const QA = [
-    { k: 'digikala recommendation recs search ecommerce products empfehlung suche produkte', en: 'At Digikala I built personalised homepage recommendations and semantic product search over 10M+ products, using CLIP-style embeddings and offline contextual bandits.', de: 'Bei Digikala habe ich personalisierte Empfehlungen für die Startseite und eine semantische Produktsuche über 10 Mio.+ Produkte gebaut, mit CLIP-artigen Embeddings und Offline-Contextual-Bandits.' },
+    { k: 'digikala recommendation recs search ecommerce products empfehlung suche produkte arbeit bei', en: 'At Digikala I built personalised homepage recommendations and semantic product search over 10M+ products, using CLIP-style embeddings and offline contextual bandits.', de: 'Bei Digikala habe ich personalisierte Empfehlungen für die Startseite und eine semantische Produktsuche über 10 Mio.+ Produkte gebaut, mit CLIP-artigen Embeddings und Offline-Contextual-Bandits.' },
     { k: 'yektanet ads ctr click conversion prediction werbung klick', en: 'At Yektanet I trained click and conversion prediction models on about a billion ad events a day: +6% CTR and +8% conversions.', de: 'Bei Yektanet habe ich Klick- und Konversionsmodelle auf rund einer Milliarde Werbeereignissen pro Tag trainiert: +6 % CTR, +8 % Konversionen.' },
     { k: 'snapp support rag retrieval llm tickets driver fahrer', en: 'At Snapp I built a retrieval system that suggests answers to ~3,000 driver tickets a day. Driver satisfaction rose from 20% to 28%.', de: 'Bei Snapp habe ich ein Retrieval-System gebaut, das Antworten auf ca. 3.000 Fahrer-Tickets pro Tag vorschlägt. Die Zufriedenheit stieg von 20 % auf 28 %.' },
     { k: 'thesis bachelor sharif generative recommender abschlussarbeit bachelorarbeit', en: 'My B.Sc. thesis at Sharif (19.8/20): a decoder-based generative recommender raised Precision@1 from 0.12 to 0.37 over ALS.', de: 'Meine Bachelorarbeit an der Sharif (19,8/20): Ein decoderbasiertes generatives Empfehlungsmodell steigerte Precision@1 gegenüber ALS von 0,12 auf 0,37.' },
     { k: 'papers paper research publications semeval forschung veröffentlichungen', en: 'Three SemEval papers in the ACL Anthology: crosslingual fact-check retrieval (2025) and two emotion-analysis systems (2024, one as first author).', de: 'Drei SemEval-Paper in der ACL Anthology: sprachübergreifendes Retrieval geprüfter Behauptungen (2025) und zwei Systeme zur Emotionsanalyse (2024, eines als Erstautor).' },
     { k: 'bonn master msc study courses why studium', en: 'I’m doing my MSc in Computer Science at the University of Bonn, since winter semester 2026/27.', de: 'Ich mache meinen Master in Informatik an der Uni Bonn, seit dem Wintersemester 2026/27.' },
     { k: 'hobbies hobbys hiking mountains mountaineering climbing canyoning rafting snowboard snowboarding sport free time wandern berge klettern freizeit', en: 'Hiking, mountaineering and climbing (Damavand, 5,610 m, in 2025), plus canyoning, rafting and snowboarding when I can. Indoors: board games and horror films.', de: 'Wandern, Bergsteigen und Klettern (Damavand, 5.610 m, 2025), dazu Canyoning, Rafting und Snowboarden. Drinnen: Brettspiele und Horrorfilme.' },
-    { k: 'project now building currently working llm agent langgraph projekt gerade arbeitest jetzt baust', en: 'Right now I’m building LLM agents with LangGraph that collect information with tools, then check and combine it step by step.', de: 'Gerade baue ich LLM-Agenten mit LangGraph, die mit Tools Informationen sammeln und sie Schritt für Schritt prüfen und zusammenführen.' },
+    { k: 'project now building currently working llm agent langgraph projekt aktuelles aktuell gerade arbeitest jetzt baust', en: 'Right now I’m building LLM agents with LangGraph that collect information with tools, then check and combine it step by step.', de: 'Gerade baue ich LLM-Agenten mit LangGraph, die mit Tools Informationen sammeln und sie Schritt für Schritt prüfen und zusammenführen.' },
     { k: 'job jobs work werkstudent hiwi internship praktikum available open hire offen', en: 'I’m open to working-student and HiWi positions, research collaborations and internships in ML, search and recommender systems.', de: 'Ich bin offen für Werkstudenten- und HiWi-Stellen, Forschungskooperationen und Praktika in ML, Suche und Empfehlungssystemen.' },
-    { k: 'contact email reach kontakt', en: 'Email alireza.g.qre@gmail.com or message me on LinkedIn.', de: 'Schreib an alireza.g.qre@gmail.com oder über LinkedIn.' }
+    { k: 'contact email reach kontakt', en: 'Email alireza.g.qre@gmail.com or message me on LinkedIn.', de: 'Schreiben Sie mir an alireza.g.qre@gmail.com oder über LinkedIn.' }
   ];
   const qEl = $('#q'), ansEl = $('#answer'), suggEl = $('#sugg');
   function answer() {
