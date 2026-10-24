@@ -38,15 +38,15 @@
 
   const T = {
     en: {
-      placeholder: 'e.g. what did you do at Digikala?', idle: 'Ask about my work, thesis, papers, what I’m open to, or hobbies.',
+      placeholder: 'e.g. what did you do at Digikala?', idle: 'Ask about my work, thesis, papers, what I’m open to, my room search or hobbies.',
       none: 'No good match yet. Try another question, or just email me.',
-      sugg: ['what did you do at Digikala?', 'what are you building now?', 'open to jobs?', 'hobbies?'],
+      sugg: ['what did you do at Digikala?', 'what are you building now?', 'open to jobs?', 'looking for a room?', 'what are you like as a flatmate?', 'hobbies?'],
       more: (n) => 'Show all photos & clips (' + n + ' more) ↓', less: 'Show fewer ↑', locale: 'en-GB', local: 'local time'
     },
     de: {
-      placeholder: 'z. B. Arbeit bei Digikala', idle: 'Fragen zu meiner Arbeit, Abschlussarbeit, Veröffentlichungen, Jobwünschen oder Hobbys.',
+      placeholder: 'z. B. Arbeit bei Digikala', idle: 'Fragen zu meiner Arbeit, Abschlussarbeit, Veröffentlichungen, Jobwünschen, Zimmersuche oder Hobbys.',
       none: 'Dazu habe ich noch keine passende Antwort. Schreiben Sie mir gern eine E-Mail.',
-      sugg: ['Arbeit bei Digikala', 'Aktuelles Projekt', 'Offen für Jobs?', 'Hobbys'],
+      sugg: ['Arbeit bei Digikala', 'Aktuelles Projekt', 'Offen für Jobs?', 'Zimmersuche?', 'Als Mitbewohner?', 'Hobbys'],
       more: (n) => 'Alle Fotos &amp; Clips zeigen (' + n + ' weitere) ↓', less: 'Weniger zeigen ↑', locale: 'de-DE', local: 'Ortszeit'
     }
   };
@@ -152,7 +152,7 @@
 
   /* ---------- ask me (keyword retrieval over a small Q&A set) ---------- */
   const QA = [
-    { k: 'digikala recommendation recs search ecommerce products empfehlung suche produkte arbeit bei', en: 'At Digikala I built personalised homepage recommendations and semantic product search over 10M+ products, using CLIP-style embeddings and offline contextual bandits.', de: 'Bei Digikala habe ich personalisierte Empfehlungen für die Startseite und eine semantische Produktsuche über 10 Mio.+ Produkte gebaut, mit CLIP-artigen Embeddings und Offline-Contextual-Bandits.' },
+    { k: 'digikala recommendation recs search ecommerce products empfehlung suche produkte arbeit', en: 'At Digikala I built personalised homepage recommendations and semantic product search over 10M+ products, using CLIP-style embeddings and offline contextual bandits.', de: 'Bei Digikala habe ich personalisierte Empfehlungen für die Startseite und eine semantische Produktsuche über 10 Mio.+ Produkte gebaut, mit CLIP-artigen Embeddings und Offline-Contextual-Bandits.' },
     { k: 'yektanet ads ctr click conversion prediction werbung klick', en: 'At Yektanet I trained click and conversion prediction models on about a billion ad events a day: +6% CTR and +8% conversions.', de: 'Bei Yektanet habe ich Klick- und Konversionsmodelle auf rund einer Milliarde Werbeereignissen pro Tag trainiert: +6 % CTR, +8 % Konversionen.' },
     { k: 'snapp support rag retrieval llm tickets driver fahrer', en: 'At Snapp I built a retrieval system that suggests answers to ~3,000 driver tickets a day. Driver satisfaction rose from 20% to 28%.', de: 'Bei Snapp habe ich ein Retrieval-System gebaut, das Antworten auf ca. 3.000 Fahrer-Tickets pro Tag vorschlägt. Die Zufriedenheit stieg von 20 % auf 28 %.' },
     { k: 'thesis bachelor sharif generative recommender abschlussarbeit bachelorarbeit', en: 'My B.Sc. thesis at Sharif (19.8/20): a decoder-based generative recommender raised Precision@1 from 0.12 to 0.37 over ALS.', de: 'Meine Bachelorarbeit an der Sharif (19,8/20): Ein decoderbasiertes generatives Empfehlungsmodell steigerte Precision@1 gegenüber ALS von 0,12 auf 0,37.' },
@@ -161,19 +161,32 @@
     { k: 'hobbies hobbys hiking mountains mountaineering climbing canyoning rafting snowboard snowboarding sport free time wandern berge klettern freizeit', en: 'Hiking, mountaineering and climbing (Damavand, 5,610 m, in 2025), plus canyoning, rafting and snowboarding when I can. Indoors: board games and horror films.', de: 'Wandern, Bergsteigen und Klettern (Damavand, 5.610 m, 2025), dazu Canyoning, Rafting und Snowboarden. Drinnen: Brettspiele und Horrorfilme.' },
     { k: 'project now building currently working llm agent langgraph projekt aktuelles aktuell gerade arbeitest jetzt baust', en: 'Right now I’m building LLM agents with LangGraph that collect information with tools, then check and combine it step by step.', de: 'Gerade baue ich LLM-Agenten mit LangGraph, die mit Tools Informationen sammeln und sie Schritt für Schritt prüfen und zusammenführen.' },
     { k: 'job jobs work werkstudent hiwi internship praktikum available open hire offen', en: 'I’m open to working-student and HiWi positions, research collaborations and internships in ML, search and recommender systems.', de: 'Ich bin offen für Werkstudenten- und HiWi-Stellen, Forschungskooperationen und Praktika in ML, Suche und Empfehlungssystemen.' },
+    { k: 'zimmersuche room flat flatshare wg housing apartment looking search zimmer wohnung suche suchst wohnen bonn köln koeln cologne where wo', en: 'Yes, I\u2019m looking for a room in a shared flat (WG) in Bonn, or in Cologne with a good connection to Bonn. Furnished or partly furnished, from now on, for at least a few months. More on my <a href="wg/">flatmate profile</a>.', de: 'Ja, ich suche ein WG-Zimmer in Bonn oder in Köln mit guter Anbindung nach Bonn, möbliert oder teilmöbliert, ab sofort und für mindestens einige Monate. Mehr dazu in meinem <a href="wg/">WG-Profil</a>.' },
+    { k: 'when move movein start available date ab wann einzug einziehen frei', en: 'I can move in right away.', de: 'Ich kann sofort einziehen.' },
+    { k: 'flatmate roommate mitbewohner like person character quiet tidy clean cleaning putzen putzplan ordentlich', en: 'I\u2019m easy-going and reliable. A cleaning rota works well for me and I stick to it. On weekdays I\u2019m mostly at uni, at weekends often outdoors.', de: 'Ich bin unkompliziert und zuverlässig. Einen Putzplan finde ich gut und halte mich daran. Unter der Woche bin ich viel an der Uni, am Wochenende oft draußen unterwegs.' },
+    { k: 'cook cooking kitchen food koch kochen küche essen', en: 'I like cooking and would enjoy cooking together sometimes.', de: 'Ich koche gern und fände gemeinsame Kochabende schön.' },
+    { k: 'german deutsch language languages speak sprache sprachen sprichst sprechen english englisch', en: 'Persian is my first language and I speak English fluently. I\u2019m learning German and happy to practise at home.', de: 'Meine Muttersprache ist Persisch, Englisch spreche ich fließend. Deutsch lerne ich gerade und übe gern im Alltag.' },
+    { k: 'documents proof funds income money pay rent schufa unterlagen nachweis finanzierung miete bezahlen immatrikulation enrolment', en: 'I\u2019m enrolled at the University of Bonn and have proof of funds. I\u2019m happy to send both on request.', de: 'Ich bin an der Uni Bonn immatrikuliert und habe einen Finanzierungsnachweis. Beides schicke ich gern auf Anfrage.' },
+    { k: 'viewing visit meet besichtigung besichtigen kennenlernen treffen', en: 'Gladly. I\u2019m in Bonn and can come by for a viewing, or do a video call first.', de: 'Sehr gern. Ich bin in Bonn und komme gern zur Besichtigung vorbei, alternativ auch erst per Videocall.' },
     { k: 'contact email reach kontakt', en: 'Email alireza.g.qre@gmail.com or message me on LinkedIn.', de: 'Schreiben Sie mir an alireza.g.qre@gmail.com oder über LinkedIn.' }
   ];
   const qEl = $('#q'), ansEl = $('#answer'), suggEl = $('#sugg');
+  const STOP = new Set('can could would you your the and are did does what when where how who why is was for with about have has any some please tell me my can\u2019t du dich dir ich mir mein meine kannst kann bist ist hast hat wie was wann wo wer und oder der die das ein eine einen mit bei für von zu gern gerne möglich bitte'.split(' '));
+  const tokens = QA.map((x) => x.k.split(' '));
+  function score(words, toks) {
+    let s = 0;
+    words.forEach((w) => {
+      if (toks.some((t) => t === w || (w.length >= 4 && t.length >= 4 && (t.startsWith(w) || w.startsWith(t))))) s++;
+    });
+    return s;
+  }
   function answer() {
     const q = qEl.value.toLowerCase().trim();
     if (!q) { ansEl.textContent = T[lang].idle; return; }
+    const words = q.split(/[^a-z0-9äöüß]+/).filter((w) => w.length > 1 && !STOP.has(w));
     let best = null, bs = 0;
-    QA.forEach((x) => {
-      let s = 0;
-      q.split(/[^a-z0-9äöüß]+/).filter((w) => w.length > 2).forEach((w) => { if (x.k.indexOf(w) >= 0) s++; });
-      if (s > bs) { bs = s; best = x; }
-    });
-    ansEl.textContent = best ? best[lang] : T[lang].none;
+    QA.forEach((x, i) => { const sc = score(words, tokens[i]); if (sc > bs) { bs = sc; best = x; } });
+    if (best) ansEl.innerHTML = best[lang]; else ansEl.textContent = T[lang].none;
   }
   function renderSugg() {
     suggEl.innerHTML = '';
