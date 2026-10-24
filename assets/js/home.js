@@ -30,12 +30,12 @@
     'path.1h': 'Sharif University', 'path.1': 'Studienbeginn Computer Engineering in Teheran, am Fuß des Alborz-Gebirges.',
     'path.2h': 'Forschung &amp; Lehre', 'path.2': 'Forschung zu Meta-RL, drei SemEval-Paper und fünf Kurse als Tutor.',
     'path.3h': 'ML in der Praxis', 'path.3': 'Suche, Ranking und Empfehlungen bei Digikala, Yektanet und Snapp.',
-    'path.4h': '5.610 m', 'path.4': 'Gipfel des Damavand erreicht. Wahrscheinlich mein schönster Tag des Jahres.',
+    'path.4h': '5.610 m', 'path.4': 'Auf dem Gipfel des Damavand, des höchsten Vulkans Asiens.',
     'path.5h': 'Bonn', 'path.5': 'Start ins Informatik-Masterstudium. Nächstes Kapitel: Deutsch lernen.',
     'mount.k': 'Abseits des Schreibtischs', 'mount.h': 'Höchster Punkt bisher:<br><em>5.610 m</em>',
     'mount.t': 'Der Damavand (2025), der höchste Vulkan Asiens. Beim Wandern, Bergsteigen und Klettern komme ich zur Ruhe, ab und zu kommen Canyoning, Rafting und Snowboarden dazu. Für Touren im Siebengebirge und in der Eifel suche ich noch Mitstreiter.',
-    'roll.h': 'Leben in Bildern &amp; Clips', 'hats': 'Hutwechsel',
-    'door.k': 'ÜBER WG-GESUCHT HIER?', 'door.t': 'Ich suche ein WG-Zimmer in Bonn. Zu meinem WG-Profil →', 'door.s': 'Auf Deutsch &amp; English · Fotos, Alltag, wie ich wohne',
+    'roll.h': 'Leben in Bildern &amp; Clips', 'chip.evening': 'abends draußen', 'chip.sea': 'am Meer',
+    'door.k': 'ÜBER WG-GESUCHT HIER?', 'door.t': 'Ich suche ein WG-Zimmer in Bonn oder Köln. Zu meinem WG-Profil →', 'door.s': 'Auf Deutsch &amp; English · Fotos, Alltag, wie ich wohne',
     'foot.t': 'Gipfel erreicht. Schreib mir!',
     'legal': 'Statisches HTML auf GitHub Pages, keine Cookies, kein Tracking.'
   };
@@ -82,14 +82,7 @@
   }
   setInterval(tick, 15000);
 
-  /* ---------- hats ---------- */
-  const hats = document.querySelectorAll('.hats img');
-  let hat = 0;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduce) setInterval(() => {
-    hats[hat].classList.remove('on'); hat = (hat + 1) % hats.length; hats[hat].classList.add('on');
-    $('#hatN').textContent = hat + 1;
-  }, 2600);
 
   /* ---------- altimeter ---------- */
   const altEl = $('#alt');
